@@ -13,15 +13,17 @@ app.get('/',function(req,res,next){
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		
-		//set the dArray to the rows object
-		context.dArray = rows;
+
 		
-		for(var i=0; i < context.dArray.length; i++){
+		for(var i=0; i < rows.length; i++){
 			
 			
-			context.dArray[i].date = context.dArray[i].date.toDateString();
+			rows[i].date = rows[i].date.toDateString();
 			
 		}
+		
+		//set the dArray to the rows object
+		context.dArray = rows;
 		
 		//render the context
 		res.render('data', context);
