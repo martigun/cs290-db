@@ -13,29 +13,8 @@ app.get('/',function(req,res,next){
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		
-		var dArray = [];
-		
-		//pdArray.push({'field':p,'data-value':req.body[p]})
-		
-		for(var i=0; i < rows.length; i++){
-			
-			var shortDate = rows[i].date.toDateString();
-			
-			dArray.push({
-				"name":rows[i].name,
-				"date":shortDate
-			});
-			
-			
-			//dArray.push('{"name":"' + rows[i].name + '"}');
-			//rows[i].date = rows[i].date.toDateString();
-			
-		}
-		
 		//set the dArray to the rows object
-		//context.dArray = rows;
-		
-		context.dArray = dArray;
+		context.dArray = rows;
 		
 		//render the context
 		res.render('data', context);
@@ -60,6 +39,27 @@ app.get('/addrow',function(req,res,next){
 	res.render('home',context);
   });
 });
+
+app.get('/delete',function(req,res,next){
+  var context = {};
+  mysql.pool.query("DELETE FROM workouts WHERE id=?",
+					[req.query.id],
+					function(err, result){
+	
+	//check for errors
+	if(err){
+		next(err);
+		return;
+	}
+	
+	//tell user
+    context.results = "Deleted " + result.changedRows + " rows.";
+	res.render('home',context);
+	
+  });
+});
+
+
 
 
 
