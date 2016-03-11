@@ -13,9 +13,9 @@
 	{{#each dArray}}
 		<tr>
 		
-			<form action="/delete" method="get">
+			
 				
-				<td><input type="text" name="id" value={{this.id}}></td>
+				
 		
 				<td class="myTable">{{this.id}}</td>
 				<td class="myTable">{{this.name}}</td>
@@ -23,9 +23,11 @@
 				<td class="myTable">{{this.weight}}</td>
 				<td class="myTable">{{this.date}}</td>
 				<td class="myTable">{{this.lbs}}</td>
-				<td><input type="submit" value="SubmitMe"/></td>
 				
-			</form>
+				<form action="/delete" method="get">
+					<input type="hidden" name="id" value={{this.id}}>
+					<td><input type="submit" value="Delete"/></td>
+				</form>
 		</tr>
 	{{/each}}
 
