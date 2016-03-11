@@ -76,6 +76,7 @@ app.get('/delete',function(req,res,next){
 	
 	console.log("Deleted ID: " + [req.query.id]);
 	
+	//redirect
 	res.redirect("/");
 	
 	//context.results = "Deleted row id= " + [req.query.id];
