@@ -34,4 +34,4 @@ function addClick(urlContent){
 };
 
 //add listener
-document.getElementById("addButton").addEventListener("click", addClick);
+//document.getElementById("addButton").addEventListener("click", addClick);
