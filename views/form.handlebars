@@ -13,8 +13,8 @@
 	{{#each dArray}}
 		<tr>
 		
-			<form action="/delete?id=3" method="get">
-		
+			<form action="/delete" method="get">
+				<input type="hidden" name="id" value="3">
 		
 				<td class="myTable">{{this.id}}</td>
 				<td class="myTable">{{this.name}}</td>
