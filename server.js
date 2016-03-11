@@ -19,6 +19,19 @@ app.get('/',function(req,res,next){
 		context.dArray = rows;
 		
 		//render the context
+		res.render('form', context);
+	});	
+});
+
+app.get('/data',function(req,res,next){
+	
+	var context = {};
+	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+		
+		//set the dArray to the rows object
+		context.dArray = rows;
+		
+		//render the context
 		res.render('data', context);
 	});	
 });

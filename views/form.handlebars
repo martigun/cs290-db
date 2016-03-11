@@ -1,0 +1,34 @@
+<h1>Workout Table</h1>
+
+
+<table class="myTable">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Reps</th>
+		<th>Weight</th>
+		<th>Date</th>
+		<th>LBs</th>
+	</tr>
+	{{#each dArray}}
+		<tr>
+		
+			<form action="/delete?id=3" method="get">
+		
+		
+				<td class="myTable">{{this.id}}</td>
+				<td class="myTable">{{this.name}}</td>
+				<td class="myTable">{{this.reps}}</td>
+				<td class="myTable">{{this.weight}}</td>
+				<td class="myTable">{{this.date}}</td>
+				<td class="myTable">{{this.lbs}}</td>
+				<td><input type="submit" value="SubmitMe"/></td>
+				
+			</form>
+		</tr>
+	{{/each}}
+
+	
+	
+</table>
+
