@@ -15,7 +15,7 @@ app.get('/',function(req,res,next){
 		
 		var dArray = [];
 		
-		pdArray.push({'field':p,'data-value':req.body[p]})
+		//pdArray.push({'field':p,'data-value':req.body[p]})
 		
 		for(var i=0; i < rows.length; i++){
 			
