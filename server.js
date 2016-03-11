@@ -113,6 +113,13 @@ app.get('/update',function(req,res,next){
   });
 });
 
+app.get('/edit',function(req,res,next){
+  var context = {};
+
+  console.log(req.originalUrl);
+  
+});
+
 
 
 
