@@ -25,6 +25,11 @@ app.get('/',function(req,res,next){
 	console.log(req.originalUrl);
 });
 
+app.get('/empty',function(req,res,next){
+	
+	console.log(req.originalUrl);
+});
+
 app.get('/addrow2',function(req,res,next){
   var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) " +
