@@ -19,9 +19,11 @@ app.get('/',function(req,res,next){
 		
 		for(var i=0; i < rows.length; i++){
 			
+			var shortDate = rows[i].date.toDateString();
+			
 			dArray.push({
 				"name":rows[i].name,
-				"date":rows[i].date
+				"date":shortDate
 			});
 			
 			
