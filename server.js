@@ -13,10 +13,14 @@ app.get('/',function(req,res,next){
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		
-		context.results = JSON.stringify(rows);
+		//context.results = JSON.stringify(rows);
+		
+		context.dArray = rows;
 		
 		
 		res.render('data', context);
+		
+		console.log(rows[0].name);
 
 	});	
 	
@@ -27,9 +31,7 @@ app.get('/json',function(req,res,next){
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		
-		//context.results = JSON.stringify(rows);
-		
-		context.dArray = rows;
+		context.results = JSON.stringify(rows);
 		
 		res.render('home', context);
 
