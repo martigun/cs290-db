@@ -62,11 +62,6 @@ app.get('/insert2',function(req,res,next){
 app.get('/reset-table',function(req,res,next){
   var context = {};
   mysql.pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
-		
-	if(err){
-		next(err);
-		return;
-	}
 	
 	
     var createString = "CREATE TABLE workouts("+
