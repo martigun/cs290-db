@@ -15,11 +15,11 @@
 	<!-- ADD NEW DATA ROW -->
 	<tr>
 		<form action="/addrow" method="get">
-			<td><input type="text" name="name" required></td>
-			<td><input type="number" name="reps"></td>
-			<td><input type="number" name="weight"></td>
-			<td><input type="date" name="date"></td>
-			<td><input type="number" name="lbs" min="0" max="1"></td>
+			<td><input id="input_name" type="text" name="name" required></td>
+			<td><input id="input_reps" type="number" name="reps"></td>
+			<td><input id="input_weight" type="number" name="weight"></td>
+			<td><input id="input_date" type="date" name="date"></td>
+			<td><input id="input_lbs" type="number" name="lbs" min="0" max="1"></td>
 			<td colspan="2">
 				<button id="addButton" type="button" onclick="addClick()">(ADD!)</button>
 			</td>

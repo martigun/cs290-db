@@ -2,12 +2,16 @@
 
 
 //on city click
-function addClick(urlContent){
+function addClick(Content){
 	
 	
 	
 	
 	console.log("Add click was pushed.");
+	
+	var name_val = document.getElementById("input_name").value;
+	
+	console.log("Name is:" & name_val);
 	
 	// //get city input value
 	// var city_input = document.getElementById("city_input").value;
