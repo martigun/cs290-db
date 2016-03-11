@@ -19,7 +19,7 @@ app.get('/',function(req,res,next){
 		
 		for(var i=0; i < rows.length; i++){
 			
-			context.dArray.push({"name":"buntar"});
+			dArray.push({"name":"buntar"});
 			
 			//dArray.push('{"name":"' + rows[i].name + '"}');
 			//rows[i].date = rows[i].date.toDateString();
