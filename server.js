@@ -16,12 +16,15 @@ app.get('/',function(req,res,next){
 		//set the dArray to the rows object
 		context.dArray = rows;
 		
+		for(var i=0; i < context.dArray.length; i++){
+			
+			
+			context.dArray[i].date = context.dArray[i].date.toDateString();
+			
+		}
+		
 		//render the context
 		res.render('data', context);
-		
-		//get field names
-		for (var i=0; i < fields.length ; i++) console.log(i + ": " + fields[i].name);
-		
 	});	
 });
 
@@ -74,9 +77,14 @@ app.get('/json',
 		context.results = JSON.stringify(rows);
 		
 		res.render('home', context);
+		
+			//get field names
+		for (var i=0; i < fields.length ; i++) console.log(i + ": " + fields[i].name);
+	
 
 	});	
 	
+		
 });
 
 app.get('/insert',function(req,res,next){
