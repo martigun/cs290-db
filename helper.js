@@ -9,7 +9,16 @@ function addClick(Content){
 	
 	console.log("--- Add click was pushed again ---");
 
-	console.log("value is:" + document.getElementById("input_name").value);
+	//console.log("value is:" + document.getElementById("input_name").value);
+	
+	var input_name = document.getElementById("input_name").value;
+	
+	if(!=input_name){
+		console.log("value is empty!");
+	} else {
+		
+		console.log("value is:" + input_name);
+	}
 	
 	// //get city input value
 	// var city_input = document.getElementById("city_input").value;
