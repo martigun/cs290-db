@@ -20,7 +20,7 @@ app.get('/',function(req,res,next){
 		res.render('data', context);
 		
 		//get field names
-		for (int i=0; i < fields.length ; i++) console.log(i + ": " + fields.name);
+		for (var i=0; i < fields.length ; i++) console.log(i + ": " + fields.name);
 		
 	});	
 });
