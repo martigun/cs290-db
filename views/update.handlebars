@@ -10,43 +10,30 @@
 		<th>Weight</th>
 		<th>Date</th>
 		<th>LBs</th>
-		<th colspan="2">Action</th>
+		<th>Action</th>
 	</tr>
 	
 	<!-- ADD NEW DATA ROW -->
 	<tr>
-		<form action="/addrow" method="get">
+		<form action="/update" method="get">
 			<td><input type="text" name="name" required></td>
 			<td><input type="number" name="reps"></td>
 			<td><input type="number" name="weight"></td>
 			<td><input type="date" name="date"></td>
 			<td><input type="number" name="lbs" min="0" max="1"></td>
-			<td colspan="2"><input type="submit" value="Add Row"/></td>
+			<td colspan="2"><input type="submit" value="Update"/></td>
 		</form>
 	</tr>
 	
-	<!-- THE DATA TABLE -->
-	{{#each dArray}}
-		<tr>
-			<td class="myTable">{{this.name}}</td>
-			<td class="myTable">{{this.reps}}</td>
-			<td class="myTable">{{this.weight}}</td>
-			<td class="myTable">{{this.date}}</td>
-			<td class="myTable">{{this.lbs}}</td>
-			
-			<!-- Delete Button -->
-			<form action="/delete" method="get">
-				<input type="hidden" name="id" value={{this.id}}>
-				<td><input type="submit" value="Delete"/></td>
-			</form>
-			
-			<!-- Edit Button -->
-			<form action="/delete" method="get">
-				<input type="hidden" name="id" value={{this.id}}>
-				<td><input type="submit" value="Edit"/></td>
-			</form>
-		</tr>
-	{{/each}}
+
+	<tr>
+		<td class="myTable">{{this.name}}</td>
+		<td class="myTable">{{this.reps}}</td>
+		<td class="myTable">{{this.weight}}</td>
+		<td class="myTable">{{this.date}}</td>
+		<td class="myTable">{{this.lbs}}</td>
+	</tr>
+
 
 </table>
 

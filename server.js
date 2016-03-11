@@ -63,10 +63,6 @@ app.get('/delete',function(req,res,next){
 	}
 	
 	//tell user
-    //context.results = "Deleted " + result.changedRows + " rows.";
-	
-	console.log("Deleted ID: " + [req.query.id]);
-	
 	console.log(req.originalUrl);
 	
 	//redirect
@@ -114,7 +110,18 @@ app.get('/update',function(req,res,next){
 });
 
 app.get('/edit',function(req,res,next){
-  var context = {};
+
+	var context = {};
+	
+	mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, rows, fields){
+		
+		//set the dArray to the rows object
+		context.rowToEdit = rows[0];
+		
+		//render the context
+		res.render('update', context);
+	});	
+  
 
   console.log(req.originalUrl);
   
