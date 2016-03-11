@@ -20,7 +20,7 @@ app.get('/',function(req,res,next){
 		res.render('data', context);
 		
 		//get field names
-		for (var i=0; i < fields.length ; i++) console.log(i + ": " + fields.name);
+		for (var i=0; i < fields.length ; i++) console.log(i + ": " + fields[i].name);
 		
 	});	
 });
@@ -39,6 +39,22 @@ app.get('/json',function(req,res,next){
 });
 
 app.get('/insert',function(req,res,next){
+  var context = {};
+  mysql.pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.c], function(err, result){
+	
+	if(err){
+		next(err);
+		return;
+	}
+	
+  
+    context.results = "Inserted id " + result.insertId;
+    //context.results = "Add was successful!";
+	res.render('home',context);
+  });
+});
+
+app.get('/addrow',function(req,res,next){
   var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.c], function(err, result){
 	
