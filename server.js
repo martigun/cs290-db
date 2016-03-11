@@ -25,6 +25,27 @@ app.get('/',function(req,res,next){
 	console.log(req.originalUrl);
 });
 
+app.get('/addrow2',function(req,res,next){
+  var context = {};
+  mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) " +
+					"VALUES (?, ?, ?, ?, ?)",
+					[req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs],
+					function(err, result){
+	
+	if(err){
+		next(err);
+		return;
+	}
+	
+	console.log(req.originalUrl);
+	
+    //context.results = "Inserted id " + result.insertId;
+    //context.results = "Add was successful!";
+	//res.render('home',context);
+	//res.redirect("/");
+  });
+});
+
 
 
 app.get('/addrow',function(req,res,next){
