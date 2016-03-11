@@ -25,7 +25,7 @@ app.get('/',function(req,res,next){
 	});	
 });
 
-app.get('/json', \
+app.get('/json', 
 	function(req,res,next){
 	
 	var context = {};
