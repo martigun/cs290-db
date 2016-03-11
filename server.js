@@ -20,7 +20,7 @@ app.get('/',function(req,res,next){
 		
 		res.render('data', context);
 		
-		console.log(rows[0].name);
+		console.log(JSON.stringify(fields));
 
 	});	
 	
