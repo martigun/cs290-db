@@ -4,20 +4,25 @@ var mysql = require('./connectSQL.js');//this??
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
-// var mysql = require('mysql');
-// var pool = mysql.createPool({
-  // host  : 'localhost',
-  // user  : 'student',
-  // password: 'default',
-  // database: 'student'
-// });
-//module.exports.pool = pool;
-
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3300);
 
 app.get('/',function(req,res,next){
+	
+	var context = {};
+	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+		
+		context.results = JSON.stringify(rows);
+		
+		
+		res.render('data', context);
+
+	});	
+	
+});
+
+app.get('/json',function(req,res,next){
 	
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
