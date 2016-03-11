@@ -7,11 +7,13 @@ function addClick(Content){
 	
 	
 	
-	console.log("Add click was pushed.");
+	console.log("Add click was pushed again.");
+	
+	var name_tc = document.getElementById("input_name").textContent;
+	console.log("textContent is:" + name_tc);
 	
 	var name_val = document.getElementById("input_name").value;
-	
-	console.log("Name is:" & name_val);
+	console.log("value is:" + name_val);
 	
 	// //get city input value
 	// var city_input = document.getElementById("city_input").value;
