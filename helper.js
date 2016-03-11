@@ -13,7 +13,7 @@ function addClick(Content){
 	
 	var input_name = document.getElementById("input_name").value;
 	
-	if(!=input_name){
+	if(!input_name){
 		console.log("value is empty!");
 	} else {
 		
