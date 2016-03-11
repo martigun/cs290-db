@@ -2,59 +2,52 @@
 
 
 <table class="myTable">
+
+	<!-- HEADER ROW -->
 	<tr>
 		<th>Name</th>
 		<th>Reps</th>
 		<th>Weight</th>
 		<th>Date</th>
 		<th>LBs</th>
-		<th>KGs</th>
 		<th>Action1</th>
 		<th>Action2</th>
 	</tr>
 	
+	<!-- ADD NEW DATA ROW -->
 	<tr>
 		<form action="/addrow" method="get">
 			<td ><input type="text" name="name" required></td>
 			<td ><input type="number" name="reps"></td>
 			<td ><input type="number" name="weight"></td>
 			<td ><input type="date" name="date"></td>
-			<!--<td ><input type="checkbox" name="lbs" value=1 checked></td>-->
-			<td>test lb</td>
-			<td>test kg</td>
-			
-			
-			
-			
+			<td ><input type="number" name="lbs" min="0" max="1"></td>
 			<td><input type="submit" value="Add Row"/></td>
 		</form>
 	</tr>
 	
-	
-	
-	
+	<!-- THE DATA TABLE -->
 	{{#each dArray}}
 		<tr>
-		
+			<td class="myTable">{{this.name}}</td>
+			<td class="myTable">{{this.reps}}</td>
+			<td class="myTable">{{this.weight}}</td>
+			<td class="myTable">{{this.date}}</td>
+			<td class="myTable">{{this.lbs}}</td>
 			
-				
-				
-		
-				<td class="myTable">{{this.name}}</td>
-				<td class="myTable">{{this.reps}}</td>
-				<td class="myTable">{{this.weight}}</td>
-				<td class="myTable">{{this.date}}</td>
-				<td class="myTable">{{this.lbs}}</td>
-				<td class="myTable">{{this.lbs*-1}}</td>
-				
-				<form action="/delete" method="get">
-					<input type="hidden" name="id" value={{this.id}}>
-					<td><input type="submit" value="Delete"/></td>
-				</form>
+			<!-- Delete Button -->
+			<form action="/delete" method="get">
+				<input type="hidden" name="id" value={{this.id}}>
+				<td><input type="submit" value="Delete"/></td>
+			</form>
+			
+			<!-- Edit Button -->
+			<form action="/delete" method="get">
+				<input type="hidden" name="id" value={{this.id}}>
+				<td><input type="submit" value="Edit"/></td>
+			</form>
 		</tr>
 	{{/each}}
 
-	
-	
 </table>
 

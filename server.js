@@ -25,18 +25,7 @@ app.get('/',function(req,res,next){
 	console.log(req.originalUrl);
 });
 
-app.get('/data',function(req,res,next){
-	
-	var context = {};
-	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-		
-		//set the dArray to the rows object
-		context.dArray = rows;
-		
-		//render the context
-		res.render('data', context);
-	});	
-});
+
 
 app.get('/addrow',function(req,res,next){
   var context = {};
@@ -164,6 +153,19 @@ app.get('/json',
 	});	
 	
 		
+});
+
+app.get('/data',function(req,res,next){
+	
+	var context = {};
+	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+		
+		//set the dArray to the rows object
+		context.dArray = rows;
+		
+		//render the context
+		res.render('data', context);
+	});	
 });
 
 app.get('/insert',function(req,res,next){
