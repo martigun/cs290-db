@@ -53,7 +53,10 @@ app.get('/delete',function(req,res,next){
 	}
 	
 	//tell user
-    context.results = "Deleted " + result.changedRows + " rows.";
+    //context.results = "Deleted " + result.changedRows + " rows.";
+	
+	
+	context.results = "Deleted row id= " + [req.query.id];
 	res.render('home',context);
 	
   });
