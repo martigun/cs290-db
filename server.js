@@ -1,16 +1,16 @@
 var express = require('express');
-//var mysql = require('./connectSQL.js');//this??
+var mysql = require('./connectSQL.js');//this??
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
-var mysql = require('mysql');
-var pool = mysql.createPool({
-  host  : 'localhost',
-  user  : 'student',
-  password: 'default',
-  database: 'student'
-});
+// var mysql = require('mysql');
+// var pool = mysql.createPool({
+  // host  : 'localhost',
+  // user  : 'student',
+  // password: 'default',
+  // database: 'student'
+// });
 //module.exports.pool = pool;
 
 app.engine('handlebars', handlebars.engine);
