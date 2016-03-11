@@ -54,6 +54,8 @@ app.get('/addrow',function(req,res,next){
   });
 });
 
+//<input type="hidden" name="id" value="3">
+
 app.get('/delete',function(req,res,next){
   var context = {};
   mysql.pool.query("DELETE FROM workouts WHERE id=?",
