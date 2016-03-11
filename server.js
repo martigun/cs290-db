@@ -25,6 +25,46 @@ app.get('/',function(req,res,next){
 	});	
 });
 
+app.get('/addrow',function(req,res,next){
+  var context = {};
+  mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) " +
+					"VALUES (?, ?, ?, ?, ?)",
+					[req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs],
+					function(err, result){
+	
+	if(err){
+		next(err);
+		return;
+	}
+	
+  
+    context.results = "Inserted id " + result.insertId;
+    //context.results = "Add was successful!";
+	res.render('home',context);
+  });
+});
+
+
+
+app.get('/reset-table',function(req,res,next){
+  var context = {};
+  mysql.pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
+	
+	
+    var createString = "CREATE TABLE workouts("+
+    "id INT PRIMARY KEY AUTO_INCREMENT,"+
+    "name VARCHAR(255) NOT NULL,"+
+    "reps INT,"+
+    "weight INT,"+
+    "date DATE,"+
+    "lbs BOOLEAN)";
+    mysql.pool.query(createString, function(err){
+      context.results = "Table reset!";
+      res.render('home',context);
+    })
+  });
+});
+
 app.get('/json', 
 	function(req,res,next){
 	
@@ -52,53 +92,6 @@ app.get('/insert',function(req,res,next){
     context.results = "Inserted id " + result.insertId;
     //context.results = "Add was successful!";
 	res.render('home',context);
-  });
-});
-
-app.get('/addrow',function(req,res,next){
-  var context = {};
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`) VALUES (?, ?)", [req.query.name, req.query.reps], function(err, result){
-	
-	if(err){
-		next(err);
-		return;
-	}
-	
-  
-    context.results = "Inserted id " + result.insertId;
-    //context.results = "Add was successful!";
-	res.render('home',context);
-  });
-});
-
-app.get('/insert2',function(req,res,next){
-  var context = {};
-  
-  var insertString = "INSERT INTO workouts (`name`) VALUES ('JOHNNY')";
-  
-  mysql.pool.query(insertString, function(err){
-
-    context.results = "Inserted!";
-	res.render('home',context);
-  });
-});
-
-app.get('/reset-table',function(req,res,next){
-  var context = {};
-  mysql.pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
-	
-	
-    var createString = "CREATE TABLE workouts("+
-    "id INT PRIMARY KEY AUTO_INCREMENT,"+
-    "name VARCHAR(255) NOT NULL,"+
-    "reps INT,"+
-    "weight INT,"+
-    "date DATE,"+
-    "lbs BOOLEAN)";
-    mysql.pool.query(createString, function(err){
-      context.results = "Table reset!";
-      res.render('home',context);
-    })
   });
 });
 
