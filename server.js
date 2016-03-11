@@ -84,13 +84,13 @@ app.get('/update',function(req,res,next){
 	
 	console.log(req.originalUrl);
 	// console.log("-----------");
-	console.log(result);
+	console.log(JSON.stringify(result[0]);
 	
 	//set the dArray to the rows object
-	context.dArray = rows;
+	//context.dArray = result;
 	
 	//render the context
-	res.render('form', context);
+	//res.render('form', context);
 	
     // if(result.length == 1){
       // var curVals = result[0];
