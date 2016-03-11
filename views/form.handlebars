@@ -8,6 +8,7 @@
 		<th>Weight</th>
 		<th>Date</th>
 		<th>LBs</th>
+		<th>KGs</th>
 		<th>Action1</th>
 		<th>Action2</th>
 	</tr>
@@ -18,9 +19,13 @@
 			<td ><input type="number" name="reps"></td>
 			<td ><input type="number" name="weight"></td>
 			<td ><input type="date" name="date"></td>
-			<td >
-				<input type="checkbox" name="lbs" value=1 checked>
-			</td>
+			<!--<td ><input type="checkbox" name="lbs" value=1 checked></td>-->
+			<td>test lb</td>
+			<td>test kg</td>
+			
+			
+			
+			
 			<td><input type="submit" value="Add Row"/></td>
 		</form>
 	</tr>
@@ -39,6 +44,7 @@
 				<td class="myTable">{{this.reps}}</td>
 				<td class="myTable">{{this.weight}}</td>
 				<td class="myTable">{{this.date}}</td>
+				<td class="myTable">{{this.lbs}}</td>
 				<td class="myTable">{{this.lbs}}</td>
 				
 				<form action="/delete" method="get">
