@@ -21,6 +21,8 @@ app.get('/',function(req,res,next){
 		//render the context
 		res.render('form', context);
 	});	
+	
+	console.log(req.originalUrl);
 });
 
 app.get('/data',function(req,res,next){
@@ -76,6 +78,8 @@ app.get('/delete',function(req,res,next){
 	
 	console.log("Deleted ID: " + [req.query.id]);
 	
+	console.log(req.originalUrl);
+	
 	//redirect
 	res.redirect("/");
 	
@@ -109,8 +113,12 @@ app.get('/update',function(req,res,next){
           return;
         }
 		
-        context.results = "Updated " + result.changedRows + " rows.";
-        res.render('home',context);
+		console.log(req.originalUrl);
+		
+        //context.results = "Updated " + result.changedRows + " rows.";
+        //res.render('home',context);
+		
+		res.redirect("/");
       });
     }
   });
