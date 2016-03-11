@@ -25,7 +25,8 @@ app.get('/',function(req,res,next){
 	});	
 });
 
-app.get('/json',  function(req,res,next){
+app.get('/json', \
+	function(req,res,next){
 	
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
@@ -56,7 +57,7 @@ app.get('/insert',function(req,res,next){
 
 app.get('/addrow',function(req,res,next){
   var context = {};
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`) VALUES (?)", [req.query.name, req.query.reps], function(err, result){
+  mysql.pool.query("INSERT INTO workouts (`name`,`reps`) VALUES (?, ?)", [req.query.name, req.query.reps], function(err, result){
 	
 	if(err){
 		next(err);
