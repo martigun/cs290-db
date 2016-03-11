@@ -48,9 +48,12 @@ app.get('/addrow',function(req,res,next){
 		return;
 	}
 	
-    context.results = "Inserted id " + result.insertId;
+	console.log(JSON.stringify(req));
+	
+    //context.results = "Inserted id " + result.insertId;
     //context.results = "Add was successful!";
-	res.render('home',context);
+	//res.render('home',context);
+	res.redirect("/");
   });
 });
 

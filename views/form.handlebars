@@ -3,7 +3,6 @@
 
 <table class="myTable">
 	<tr>
-		<th>ID</th>
 		<th>Name</th>
 		<th>Reps</th>
 		<th>Weight</th>
@@ -15,7 +14,6 @@
 	
 	<tr>
 		<form action="/addrow" method="get">
-			<td ><input type="text" name="id"></td>
 			<td ><input type="text" name="name" required></td>
 			<td ><input type="number" name="reps"></td>
 			<td ><input type="number" name="weight"></td>
@@ -35,7 +33,6 @@
 				
 				
 		
-				<td class="myTable">{{this.id}}</td>
 				<td class="myTable">{{this.name}}</td>
 				<td class="myTable">{{this.reps}}</td>
 				<td class="myTable">{{this.weight}}</td>
