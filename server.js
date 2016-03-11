@@ -13,17 +13,16 @@ app.get('/',function(req,res,next){
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		
-		//context.results = JSON.stringify(rows);
-		
+		//set the dArray to the rows object
 		context.dArray = rows;
 		
-		
+		//render the context
 		res.render('data', context);
 		
-		console.log(fields.length);
-
+		//get field names
+		for (int i=0; i < fields.length ; i++) console.log(i + ": " + fields.name);
+		
 	});	
-	
 });
 
 app.get('/json',function(req,res,next){
