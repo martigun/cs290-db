@@ -10,6 +10,21 @@
 		<th>Date</th>
 		<th>LBs</th>
 	</tr>
+	
+	<tr>
+		<form action="/addrow" method="get">
+			<td class="myTable"><input type="text" name="id"></td>
+			<td class="myTable"><input type="text" name="name" required></td>
+			<td class="myTable"><input type="number" name="reps"></td>
+			<td class="myTable"><input type="number" name="weight"></td>
+			<td class="myTable"><input type="number" name="date"></td>
+			<td class="myTable"><input type="checkbox" name="lbs"></td>
+		</form>
+	</tr>
+	
+	
+	
+	
 	{{#each dArray}}
 		<tr>
 		
