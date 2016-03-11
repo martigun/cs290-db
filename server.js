@@ -19,7 +19,7 @@ app.get('/',function(req,res,next){
 		context.dArray = rows;
 		
 		//render the context
-		res.render('form', context);
+		res.render('form2', context);
 	});	
 	
 	console.log(req.originalUrl);
