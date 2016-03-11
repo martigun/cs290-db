@@ -27,8 +27,9 @@ app.get('/json',function(req,res,next){
 	var context = {};
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		
-		context.results = JSON.stringify(rows);
+		//context.results = JSON.stringify(rows);
 		
+		context.dArray = rows;
 		
 		res.render('home', context);
 
