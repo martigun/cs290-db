@@ -1,5 +1,7 @@
 .myTable {
 
-	background-color: yellow;
+	background-color: lightblue;
+	border-style: solid;
+	border-width: thin;
 
 }
