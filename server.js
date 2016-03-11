@@ -11,11 +11,11 @@ var pool = mysql.createPool({
   password: 'default',
   database: 'student'
 });
-module.exports.pool = pool;
+//module.exports.pool = pool;
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 3300);
 
 app.get('/',function(req,res,next){
 	
@@ -83,5 +83,5 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-console.log("Running on 3000...")
-app.listen(3000);
+console.log("Running on 3300...")
+app.listen(3300);
