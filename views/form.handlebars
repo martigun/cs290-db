@@ -26,7 +26,7 @@
 	
 	<!-- THE DATA TABLE -->
 	{{#each dArray}}
-		<tr>
+		<tr id="trow"+{{this.id}}>
 			<td class="myTable">{{this.name}}</td>
 			<td class="myTable">{{this.reps}}</td>
 			<td class="myTable">{{this.weight}}</td>
