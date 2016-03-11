@@ -123,8 +123,6 @@ app.get('/edit',function(req,res,next){
 		//set the dArray to the rows object
 		context.rowToEdit = rows[0];
 		
-		console.log(JSON.stringify(context.rowToEdit));
-		
 		//render the context
 		res.render('update', context);
 	});	
