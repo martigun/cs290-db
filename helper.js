@@ -59,32 +59,14 @@ function getTable(Content){
 				for(var j=0; j < tFields.length; j++){
 					
 					var data_cell = document.createElement("td");
-					data_cell.textContent = dArray[i][tFields[j]];
+					var thisData = dArray[i][tFields[j]];
+					
+					if(tFields[j]=="date") thisData = thisData.toDateString();
+					
+					data_cell.textContent = thisData;
+					
 					thisRow.appendChild(data_cell);
 				}
-				
-				//more
-				
-				// //create data cells
-				// var name_data = document.createElement("td");
-				// var reps_data = document.createElement("td");
-				// var weight_data = document.createElement("td");
-				// var date_data = document.createElement("td");
-				// var lbs_data = document.createElement("td");
-				
-				// //load data
-				// name_data.textContent = dArray[i]["name"];
-				// reps_data.textContent = dArray[i].reps;
-				// weight_data.textContent = dArray[i]["weight"];
-				// date_data.textContent = dArray[i].date;
-				// lbs_data.textContent = dArray[i].lbs;
-				
-				// //append cells to row
-				// thisRow.appendChild(name_data);
-				// thisRow.appendChild(reps_data);
-				// thisRow.appendChild(weight_data);
-				// thisRow.appendChild(date_data);
-				// thisRow.appendChild(lbs_data);
 				
 				//append row to table
 				dataTable.appendChild(thisRow);
