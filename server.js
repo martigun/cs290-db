@@ -200,7 +200,7 @@ app.get('/get',function(req,res,next){
 		res.json(context);
 	});	
 	
-	console.log(req.originalUrl);
+	//console.log(req.originalUrl);
 });
 
 
