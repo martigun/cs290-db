@@ -43,7 +43,9 @@ function getTable(Content){
 			console.log(JSON.parse(req.responseText));
 			
 			//move results to dArray
-			var dArray = JSON.parse(req.responseText);
+			var obj = JSON.parse(req.responseText);
+			
+			var dArray = obj.dArray;
 			
 			//Build table from this array
 			for(var i=0; i < dArray.length; i++){
