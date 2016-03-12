@@ -3,16 +3,20 @@
 //get data table
 var dataTable = document.getElementById("dataTable");
 
-//build header row and append
+//build header row and append to table
 var myHeaderRow = document.createElement("tr");
-var myFields = ["name","reps","weight","date","lbs"];
+var myFields = ["a","b","c","d","e"];
 for(var i=0; i < myFields.length; i++){
 	
-	var myHeader = document.createElement("th");
+	var myHeader = document.createElement("td");
 	myHeader.textContent = myFields[i];
 	myHeaderRow.appendChild(myHeader);
 }
 dataTable.appendChild(myHeaderRow);
+
+//build form row and append to table
+
+
 
 //on load
 function getTable(Content){
