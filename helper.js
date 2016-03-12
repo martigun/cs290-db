@@ -60,15 +60,15 @@ function getTable(Content){
 };
 
 //add listener
-document.getElementById("addButton").addEventListener("click", addClick);
+//document.getElementById("addButton").addEventListener("click", addClick);
 
-//on city click
-function addClick(Content){
+// //on city click
+// function addClick(Content){
 	
-	alert("You clicked add!");
-	
-	
+	// alert("You clicked add!");
 	
 	
-};
+	
+	
+// };
 
