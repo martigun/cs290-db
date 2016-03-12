@@ -12,17 +12,10 @@ app.use(express.static(__dirname));
 
 app.get('/',function(req,res,next){
 	
-	var context = {};
-	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-		
-		//set the dArray to the rows object
-		context.dArray = rows;
-		
-		//render the context
-		res.render('form2', context);
-	});	
+	console.log('hello from the server');
+
+	getTable();
 	
-	console.log(req.originalUrl);
 });
 
 app.get('/empty',function(req,res,next){
@@ -192,6 +185,37 @@ app.get('/reset-table',function(req,res,next){
       res.render('home',context);
     })
   });
+});
+
+app.get('/get',function(req,res,next){
+	
+	var context = {};
+	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+		
+		//set the dArray to the rows object
+		context.dArray = rows;
+		
+		//render the context
+		res.json(context);
+	});	
+	
+	console.log(req.originalUrl);
+});
+
+
+app.get('/render',function(req,res,next){
+	
+	var context = {};
+	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+		
+		//set the dArray to the rows object
+		context.dArray = rows;
+		
+		//render the context
+		res.render('form2', context);
+	});	
+	
+	console.log(req.originalUrl);
 });
 
 app.get('/json', 

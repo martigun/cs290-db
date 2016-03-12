@@ -1,5 +1,19 @@
 
 
+//on load
+function getTable(Content){
+	
+	
+	
+	console.log("Get table was called.");
+
+	//console.log("value is:" + document.getElementById("input_name").value);
+	
+
+	
+	
+};
+
 
 //on city click
 function addClick(Content){
