@@ -12,10 +12,17 @@ app.use(express.static(__dirname));
 
 app.get('/',function(req,res,next){
 	
-	console.log(req.originalUrl);
+	var context = {};
+	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+		
+		//set the dArray to the rows object
+		context.dArray = rows;
+		
+		//render the context
+		res.render('form', context);
+	});	
 	
-	var obj = {};
-	res.render('blank', obj);
+	console.log(req.originalUrl);
 	
 });
 
