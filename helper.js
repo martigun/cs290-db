@@ -1,5 +1,19 @@
 
 
+//get data table
+var dataTable = document.getElementById("dataTable");
+
+//build header row and append
+var myHeaderRow = document.createElement("tr");
+var myFields = ["name","reps","weight","date","lbs"];
+for(var i=0; i < myFields.length; i++){
+	
+	var myHeader = document.createElement("th");
+	myHeader.textContent = myFields[i];
+	myHeaderRow.appendChild(myHeader);
+}
+dataTable.appendChild(myHeaderRow);
+
 //on load
 function getTable(Content){
 	
