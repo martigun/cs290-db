@@ -12,7 +12,18 @@ getTable();
 function getTable(Content){
 	
 	//get data table
+	var dataTable = document.getElementById("dataTable");
 
+	//build header row and append to table
+	var myHeaderRow = document.createElement("tr");
+	var myFields = ["AAA","BBB","CCC","DDD","EEE"];
+	for(var i=0; i < myFields.length; i++){
+		
+		var myHeader = document.createElement("td");
+		myHeader.textContent = myFields[i];
+		myHeaderRow.appendChild(myHeader);
+	}
+	dataTable.appendChild(myHeaderRow);
 	
 	
 	
