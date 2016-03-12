@@ -88,7 +88,7 @@ function addClick(Content){
 	var name = document.getElementById("input_name").value;
 	
 	//check that name is filled in
-	if(!input_name) {
+	if(!name) {
 		alert("Name must be filled in!");
 		return;
 	};
@@ -106,7 +106,7 @@ function addClick(Content){
 	
 	var qString = "/addrow2?";
 	
-	qString += "name=" + input_name;
+	qString += "name=" + name;
 	qString += "&reps=" + reps;
 	qString += "&weight=" + weight;
 	qString += "&date=" + date;

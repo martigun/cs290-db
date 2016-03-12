@@ -14,16 +14,22 @@
 	
 	<!-- ADD NEW DATA ROW -->
 	<tr>
-		<td><input id="input_name" type="text" name="name" required></td>
-		<td><input id="input_reps" type="number" name="reps"></td>
-		<td><input id="input_weight" type="number" name="weight"></td>
-		<td><input id="input_date" type="date" name="date"></td>
-		<td><input id="input_lbs" type="number" name="lbs" min="0" max="1"></td>
+		<form action="javascript:void(0);">
 		
-		<td colspan="2">
-			<button id="addButton" type="button">(ADD!)</button>
-			<!-- <button id="addButton" type="button" onclick="addClick()">(ADD!)</button> -->
-		</td>
+			<td><input id="input_name" type="text" name="name" required></td>
+			<td><input id="input_reps" type="number" name="reps"></td>
+			<td><input id="input_weight" type="number" name="weight"></td>
+			<td><input id="input_date" type="date" name="date"></td>
+			<td><input id="input_lbs" type="number" name="lbs" min="0" max="1"></td>
+			
+			<td colspan="2">
+				
+				<!-- <button id="addButton" type="button">(ADD!)</button> -->
+				<input id="addButton" type="submit" value="Add Row"/>
+				<!-- <button id="addButton" type="button" onclick="addClick()">(ADD!)</button> -->
+			</td>
+			
+		</form>
 
 	</tr>
 	
