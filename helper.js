@@ -61,9 +61,9 @@ function getTable(Content){
 				var lbs_data = document.createElement("td");
 				
 				//load data
-				name_data.textContent = dArray[i].name;
+				name_data.textContent = dArray[i]["name"];
 				reps_data.textContent = dArray[i].reps;
-				weight_data.textContent = dArray[i].weight;
+				weight_data.textContent = dArray[i]["weight"];
 				date_data.textContent = dArray[i].date;
 				lbs_data.textContent = dArray[i].lbs;
 				
