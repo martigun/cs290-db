@@ -14,7 +14,8 @@ app.get('/',function(req,res,next){
 	
 	console.log('hello from the server');
 
-	getTable();
+	var obj = {};
+	res.render('blank', obj);
 	
 });
 
