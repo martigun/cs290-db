@@ -50,6 +50,12 @@ function getTable(Content){
 					
 					thisRow.appendChild(data_cell);
 				}
+				 //Add delete button
+				var deleteCell = document.createElement("td");
+				var deleteButton = document.createElement("button");
+				deleteButton.textContent = "Delete";
+				deleteCell.appendChild(deleteButton);
+				thisRow.appendChild(deleteCell);
 				
 				//append row to table
 				dataTable.appendChild(thisRow);

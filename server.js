@@ -12,8 +12,8 @@ app.use(express.static(__dirname));
 
 app.get('/',function(req,res,next){
 	
-	console.log('hello from the server');
-
+	console.log(req.originalUrl);
+	
 	var obj = {};
 	res.render('blank', obj);
 	
