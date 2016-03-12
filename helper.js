@@ -47,38 +47,44 @@ function getTable(Content){
 			
 			var dArray = obj.dArray;
 			
+			
+			
 			//Build table from this array
 			for(var i=0; i < dArray.length; i++){
 				
 				//create row
 				var thisRow = document.createElement("tr");
 				
-				//create data cells
-				var name_data = document.createElement("td");
-				var reps_data = document.createElement("td");
-				var weight_data = document.createElement("td");
-				var date_data = document.createElement("td");
-				var lbs_data = document.createElement("td");
+				var tFields = ["name","reps","weight","date","lbs"];
+				for(var j=0; j < tFields.length; j++){
+					
+					var data_cell = document.createElement("td");
+					data_cell.textContent = dArray[i][tFields[j]];
+					thisRow.appendChild(data_cell);
+				}
 				
-				//load data
+				
+				
+				// //create data cells
+				// var name_data = document.createElement("td");
+				// var reps_data = document.createElement("td");
+				// var weight_data = document.createElement("td");
+				// var date_data = document.createElement("td");
+				// var lbs_data = document.createElement("td");
+				
+				// //load data
 				// name_data.textContent = dArray[i]["name"];
 				// reps_data.textContent = dArray[i].reps;
 				// weight_data.textContent = dArray[i]["weight"];
 				// date_data.textContent = dArray[i].date;
 				// lbs_data.textContent = dArray[i].lbs;
 				
-				name_data.textContent = myFields[0];
-				reps_data.textContent = myFields[1];
-				weight_data.textContent = myFields[2];
-				date_data.textContent = myFields[3];
-				lbs_data.textContent = myFields[4];
-				
-				//append cells to row
-				thisRow.appendChild(name_data);
-				thisRow.appendChild(reps_data);
-				thisRow.appendChild(weight_data);
-				thisRow.appendChild(date_data);
-				thisRow.appendChild(lbs_data);
+				// //append cells to row
+				// thisRow.appendChild(name_data);
+				// thisRow.appendChild(reps_data);
+				// thisRow.appendChild(weight_data);
+				// thisRow.appendChild(date_data);
+				// thisRow.appendChild(lbs_data);
 				
 				//append row to table
 				dataTable.appendChild(thisRow);
