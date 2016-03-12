@@ -25,43 +25,8 @@ function getTable(Content){
 			var obj = JSON.parse(req.responseText);			
 			var dArray = obj.dArray;
 			
+			//use the array to display the table
 			displayTable(dArray);
-			
-			// //get data table
-			// var dataTable = document.getElementById("dataTable");
-						
-			// //Build table from this array
-			// for(var i=0; i < dArray.length; i++){
-				
-				// //create row
-				// var thisRow = document.createElement("tr");
-				
-				// var tFields = ["name","reps","weight","date","lbs"];
-				// for(var j=0; j < tFields.length; j++){
-					
-					// var data_cell = document.createElement("td");
-					// var thisData = dArray[i][tFields[j]];
-					
-					// //format dates
-					// if(tFields[j]=="date") {
-						// var date = new Date(thisData);
-						// thisData = date.toDateString();
-					// }
-					
-					// data_cell.textContent = thisData;
-					
-					// thisRow.appendChild(data_cell);
-				// }
-				 // //Add delete button
-				// var deleteCell = document.createElement("td");
-				// var deleteButton = document.createElement("button");
-				// deleteButton.textContent = "Delete";
-				// deleteCell.appendChild(deleteButton);
-				// thisRow.appendChild(deleteCell);
-				
-				// //append row to table
-				// dataTable.appendChild(thisRow);
-			// }
 			
 		} else {
 			//there was an error
@@ -71,13 +36,6 @@ function getTable(Content){
 	
 	//activates when call comes back
 	req.send(null);
-	
-	
-	
-	
-	
-
-	
 	
 };
 
@@ -119,10 +77,6 @@ function displayTable(dArray){
 		dataTable.appendChild(thisRow);
 	}
 	
-	
-	
-	
-	
 }
 
 
@@ -159,6 +113,7 @@ function addClick(Content){
 	qString += "&lbs=" + lbs;
 	
 	alert(qString);
+	return;
 	
 	var req = new XMLHttpRequest();
 	req.open("GET", qString, true); //true for async!
@@ -168,9 +123,10 @@ function addClick(Content){
 		//check status
 		if(req.status >= 200 && req.status < 400){
 			
-			console.log("success!");
 
-			
+			//get the table on sucess
+			getTable();
+			console.log("success!");
 			
 		} else {
 			
