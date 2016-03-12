@@ -12,7 +12,7 @@ getTable();
 function getTable(Content){
 	
 	//get data table
-`
+
 	
 	
 	
