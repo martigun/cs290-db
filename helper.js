@@ -113,7 +113,6 @@ function addClick(Content){
 	qString += "&lbs=" + lbs;
 	
 	alert(qString);
-	return;
 	
 	var req = new XMLHttpRequest();
 	req.open("GET", qString, true); //true for async!
