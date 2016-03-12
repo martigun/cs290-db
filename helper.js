@@ -61,7 +61,13 @@ function getTable(Content){
 					var data_cell = document.createElement("td");
 					var thisData = dArray[i][tFields[j]];
 					
-					if(tFields[j]=="date") thisData = thisData.toDateString();
+					if(tFields[j]=="date") {
+						
+						var date = new Date(thisData);
+						
+						thisData = date.toDateString();
+						
+						}
 					
 					data_cell.textContent = thisData;
 					
