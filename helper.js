@@ -76,7 +76,21 @@ function getTable(Content){
 //on city click
 function addClick(Content){
 	
-	alert("addClick was clicked!");
+	//alert("addClick was clicked!");
+	
+	var name_input = document.getElementById("name_input").value;
+	
+	if(!name_input) {
+		alert("Name must be filled in!");
+		return;
+	};
+	
+	alert("Your name is: " + name_input);
+	
+	
+	
+	
+	
 	
 };
 
