@@ -61,11 +61,17 @@ function getTable(Content){
 				var lbs_data = document.createElement("td");
 				
 				//load data
-				name_data.textContent = dArray[i]["name"];
-				reps_data.textContent = dArray[i].reps;
-				weight_data.textContent = dArray[i]["weight"];
-				date_data.textContent = dArray[i].date;
-				lbs_data.textContent = dArray[i].lbs;
+				// name_data.textContent = dArray[i]["name"];
+				// reps_data.textContent = dArray[i].reps;
+				// weight_data.textContent = dArray[i]["weight"];
+				// date_data.textContent = dArray[i].date;
+				// lbs_data.textContent = dArray[i].lbs;
+				
+				name_data.textContent = myFields[0];
+				reps_data.textContent = myFields[1];
+				weight_data.textContent = myFields[2];
+				date_data.textContent = myFields[3];
+				lbs_data.textContent = myFields[4];
 				
 				//append cells to row
 				thisRow.appendChild(name_data);
