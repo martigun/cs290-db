@@ -1,5 +1,5 @@
 //Gunnar Martin
-//CS290
+//CS290: Web
 //Winter 2016
 //Assignment: DB Interaction
 
