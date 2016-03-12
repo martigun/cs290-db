@@ -38,24 +38,10 @@ app.get('/addrow2',function(req,res,next){
 	
 	console.log(req.originalUrl);
 	
-	
-	
-    //context.results = "Inserted id " + result.insertId;
-    //context.results = "Add was successful!";
-	//res.render('home',context);
-	//res.redirect("/");
+	res.send(req.originalUrl);
   });
 	
-	//load the table
-  	var context2 = {};
-	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-		
-		//set the dArray to the rows object
-		context2.dArray = rows;
-		
-		//render the context2
-		res.render('form2', context2);
-	});
+
 });
 
 

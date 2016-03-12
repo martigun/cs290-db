@@ -73,6 +73,7 @@ function getTable(Content){
 	
 	
 	
+	
 
 	
 	
@@ -86,12 +87,27 @@ function addClick(Content){
 	
 	var input_name = document.getElementById("input_name").value;
 	
+	//check that name is filled in
 	if(!input_name) {
 		alert("Name must be filled in!");
 		return;
 	};
 	
-	alert("Your name is: " + input_name);
+	var input_reps = document.getElementById("input_reps").value
+	var input_weight = document.getElementById("input_weight").value
+	var input_date = document.getElementById("input_date").value
+	//convert date
+	// if(input_date){
+		// var date = new Date(input_date);
+		// input_date = date.toDateString();
+	// }
+	var input_lbs = document.getElementById("input_lbs").value
+	
+	
+	var qString = "/addrow2?";
+	
+	alert(qString);
+	
 	
 	
 	
