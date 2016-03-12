@@ -2,7 +2,7 @@
 
 <table class="myTable">
 
-	<!-- HEADER ROW -->
+	<!-- Header Row -->
 	<tr>
 		<th>Name</th>
 		<th>Reps</th>
@@ -12,7 +12,7 @@
 		<th colspan="2">Action</th>
 	</tr>
 	
-	<!-- ADD NEW DATA ROW -->
+	<!-- Add New Data Row -->
 	<tr>
 		<form action="/addrow" method="get">
 			<td><input type="text" name="name" required></td>
@@ -24,7 +24,7 @@
 		</form>
 	</tr>
 	
-	<!-- THE DATA TABLE -->
+	<!-- The Data Table -->
 	{{#each dArray}}
 		<tr id="row_{{this.id}}">
 			<td class="myTable">{{this.name}}</td>
