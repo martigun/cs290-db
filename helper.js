@@ -78,14 +78,14 @@ function addClick(Content){
 	
 	//alert("addClick was clicked!");
 	
-	var name_input = document.getElementById("name_input").value;
+	var input_name = document.getElementById("input_name").value;
 	
-	if(!name_input) {
+	if(!input_name) {
 		alert("Name must be filled in!");
 		return;
 	};
 	
-	alert("Your name is: " + name_input);
+	alert("Your name is: " + input_name);
 	
 	
 	
