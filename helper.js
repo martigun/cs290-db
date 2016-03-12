@@ -7,31 +7,12 @@
 //call getTable on load
 getTable();
 
-
 //on load
 function getTable(Content){
 	
-	//get data table
-	var dataTable = document.getElementById("dataTable");
-
-	//build header row and append to table
-	var myHeaderRow = document.createElement("tr");
-	var myFields = ["AAA","BBB","CCC","DDD","EEE"];
-	for(var i=0; i < myFields.length; i++){
-		
-		var myHeader = document.createElement("td");
-		myHeader.textContent = myFields[i];
-		myHeaderRow.appendChild(myHeader);
-	}
-	dataTable.appendChild(myHeaderRow);
-	
-	
-	
+	//report to console
 	console.log("Get table was called.");
 
-	//console.log("value is:" + document.getElementById("input_name").value);
-	
-	
 	var req = new XMLHttpRequest();
 	req.open("GET", "/get", true); //true for async!
 	
@@ -39,16 +20,14 @@ function getTable(Content){
 	req.addEventListener('load',function(){
 		//check status
 		if(req.status >= 200 && req.status < 400){
-			//parse results for console
-			console.log(JSON.parse(req.responseText));
+			
+			//get data table
+			var dataTable = document.getElementById("dataTable");
 			
 			//move results to dArray
-			var obj = JSON.parse(req.responseText);
-			
+			var obj = JSON.parse(req.responseText);			
 			var dArray = obj.dArray;
-			
-			
-			
+						
 			//Build table from this array
 			for(var i=0; i < dArray.length; i++){
 				
@@ -61,13 +40,11 @@ function getTable(Content){
 					var data_cell = document.createElement("td");
 					var thisData = dArray[i][tFields[j]];
 					
+					//format dates
 					if(tFields[j]=="date") {
-						
 						var date = new Date(thisData);
-						
 						thisData = date.toDateString();
-						
-						}
+					}
 					
 					data_cell.textContent = thisData;
 					
@@ -77,12 +54,6 @@ function getTable(Content){
 				//append row to table
 				dataTable.appendChild(thisRow);
 			}
-			
-			
-			document.getElementById("testData").textContent = req.responseText;
-			
-			//send results string to page
-			//document.getElementById("weatherResults").textContent = req.responseText;
 			
 		} else {
 			//there was an error
